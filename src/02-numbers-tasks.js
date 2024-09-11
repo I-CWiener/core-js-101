@@ -19,8 +19,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea( width, height ) {
+  return width*height;
 }
 
 
@@ -35,8 +35,8 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference( radius ) {
+ return radius*2*3.14159265359;
 }
 
 /**
@@ -51,8 +51,8 @@ function getCircleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage( value1, value2 ) {
+  return (value1 + value2) / 2;
 }
 
 /**
@@ -70,8 +70,8 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints( x1, y1, x2, y2 ) {
+return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
 /**
@@ -86,8 +86,12 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot( a, b ) {
+    let b2 = 0;
+    let x = 0;
+Math.sign(b) === -1? b2 = Math.abs(b): b2 = 0 - b;
+Math.sign(a) === -1? x = 0 - (b2 / a): x = b2 / a;
+return x;
 }
 
 
@@ -109,8 +113,8 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors( x1, y1, x2, y2 ) {
+return Math.acos((x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2)));
 }
 
 /**
@@ -126,7 +130,9 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     0     => 0
  */
 function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+let arr = (""+value).split("").map(Number);
+console.log(arr[arr.length-1]);
+return arr[arr.length-1];
 }
 
 
@@ -141,8 +147,13 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString( value ) {
+ if (value.includes('.')) {
+      console.log(parseFloat(value));
+    return parseFloat(value);
+  }
+   console.log(parseInt(value));
+  return parseInt(value);
 }
 
 /**
