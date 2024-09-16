@@ -19,10 +19,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  let rez = "";
-  rez = value1 + value2;
-  console.log(rez);
-  return rez;
+  return value1 + value2; 
 }
 
 
